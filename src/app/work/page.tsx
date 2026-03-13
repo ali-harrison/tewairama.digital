@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 const PROJECTS = [
   {
@@ -22,26 +22,19 @@ const PROJECTS = [
   },
 ]
 
-const PROXIMITY = 120
-
 export default function WorkPage() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      itemRefs.current.forEach((el) => {
-        if (!el) return
-        const rect = el.getBoundingClientRect()
-        const cx = rect.left + rect.width / 2
-        const cy = rect.top + rect.height / 2
-        const dist = Math.sqrt((e.clientX - cx) ** 2 + (e.clientY - cy) ** 2)
-        el.style.opacity = dist < PROXIMITY ? '1' : '0.25'
-      })
-    }
-
-    window.addEventListener('mousemove', onMouseMove)
-    return () => window.removeEventListener('mousemove', onMouseMove)
-  }, [])
+  const setOpacities = (activeIndex: number | null) => {
+    itemRefs.current.forEach((el, i) => {
+      if (!el) return
+      if (activeIndex === null) {
+        el.style.opacity = '0.4'
+      } else {
+        el.style.opacity = i === activeIndex ? '1' : '0.15'
+      }
+    })
+  }
 
   return (
     <section
@@ -59,22 +52,19 @@ export default function WorkPage() {
       {PROJECTS.map(({ name, role, year, href }, i) => (
         <div
           key={name}
-          ref={(el) => {
-            itemRefs.current[i] = el
-          }}
+          ref={(el) => { itemRefs.current[i] = el }}
+          onMouseEnter={() => setOpacities(i)}
+          onMouseLeave={() => setOpacities(null)}
           style={{
-            opacity: 0.25,
-            transition: 'opacity 0.4s ease',
+            opacity: 0.4,
+            transition: 'opacity 0.35s ease',
           }}
         >
           <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              textDecoration: 'none',
-              cursor: 'pointer',
-            }}
+            style={{ textDecoration: 'none' }}
           >
             <p
               style={{
