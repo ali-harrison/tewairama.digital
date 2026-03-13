@@ -1,15 +1,10 @@
 'use client'
 import { useEffect, useRef } from 'react'
 
-const CLUSTER_0 = [
-  { label: 'github.com/tewairama ↗', href: 'https://github.com/ali-harrison' },
-  { label: 'tewairama.digital ↗', href: 'https://tewairama.digital' },
-]
-
 const CLUSTER_1 = [
-  { label: 'Instagram ↗', href: 'https://instagram.com/tewairama.digital/' },
+  { label: 'tewairama@pm.me ↗', href: 'mailto:tewairama@pm.me' },
+  { label: 'instagram.com/tewairama.digital ↗', href: 'https://instagram.com/tewairama.digital/' },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/te-wairama' },
-  { label: 'Email ↗', href: 'mailto:tewairama@pm.me' },
 ]
 
 const LINK_STYLE: React.CSSProperties = {
@@ -26,7 +21,7 @@ const LINK_STYLE: React.CSSProperties = {
 
 const PROXIMITY = 120
 
-export default function InfoPage() {
+export default function ContactPage() {
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([])
 
   useEffect(() => {
@@ -47,32 +42,7 @@ export default function InfoPage() {
 
   return (
     <>
-      {/* Cluster 1 — top-right */}
-      <div
-        style={{
-          position: 'fixed',
-          top: '3rem',
-          right: '3rem',
-          textAlign: 'right',
-        }}
-      >
-        {CLUSTER_0.map(({ label, href }, i) => (
-          <a
-            key={href}
-            ref={(el) => {
-              linkRefs.current[i] = el
-            }}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={LINK_STYLE}
-          >
-            {label}
-          </a>
-        ))}
-      </div>
-
-      {/* Cluster 2 — centre */}
+      {/* Cluster — centre */}
       <div
         style={{
           position: 'fixed',
@@ -85,9 +55,7 @@ export default function InfoPage() {
         {CLUSTER_1.map(({ label, href }, i) => (
           <a
             key={href}
-            ref={(el) => {
-              linkRefs.current[CLUSTER_0.length + i] = el
-            }}
+            ref={(el) => { linkRefs.current[i] = el }}
             href={href}
             target={href.startsWith('http') ? '_blank' : undefined}
             rel="noopener noreferrer"

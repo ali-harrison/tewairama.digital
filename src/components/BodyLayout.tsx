@@ -5,22 +5,21 @@ import Nav from '@/components/Nav'
 import CustomCursor from '@/components/CustomCursor'
 import Intro from '@/components/Intro'
 
-const ShaderBackground = dynamic(
-  () => import('@/components/ShaderBackground'),
+const WebGLBackground = dynamic(
+  () => import('@/components/WebGLBackground'),
   { ssr: false }
 )
 
 export default function BodyLayout({ children }: { children: React.ReactNode }) {
-  const [introStarted, setIntroStarted] = useState(false)
   const [contentVisible, setContentVisible] = useState(false)
 
   return (
     <>
+      <WebGLBackground />
       <Intro
-        onPūhoroReveal={() => setIntroStarted(true)}
+        onPūhoroReveal={() => {}}
         onComplete={() => setTimeout(() => setContentVisible(true), 400)}
       />
-      <ShaderBackground shouldReveal={introStarted} />
       <CustomCursor />
       <div
         style={{

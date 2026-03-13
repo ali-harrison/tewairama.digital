@@ -8,8 +8,9 @@ import { gsap } from 'gsap'
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Work', href: '/work' },
-  { label: 'Info', href: '/info' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/info' },
 ]
 
 function getNZTime() {
