@@ -1,24 +1,28 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Mono } from 'next/font/google'
+import { Inter_Tight, Fragment_Mono } from 'next/font/google'
 import './globals.css'
-import BodyLayout from '@/components/BodyLayout'
+import Nav from '@/components/Nav'
+import GridLines from '@/components/GridLines'
+import Motion from '@/components/Motion'
 
-// Lightest available weight for Playfair Display is 400
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  style: ['normal', 'italic'],
-  variable: '--font-playfair',
+// latin-ext covers macrons (ā, ō)
+const interTight = Inter_Tight({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-inter-tight',
   display: 'swap',
 })
 
-const dmMono = DM_Mono({
-  subsets: ['latin'],
-  weight: ['300', '400'],
-  style: ['normal'],
-  variable: '--font-dm-mono',
+const fragmentMono = Fragment_Mono({
+  subsets: ['latin', 'latin-ext'],
+  weight: '400',
+  variable: '--font-fragment-mono',
   display: 'swap',
 })
+
+// Adds html.motion before first paint so reveal start-states never flash.
+// Skipped for reduced motion; removed again if nothing has revealed in time,
+// so the page can never get stuck hidden.
+const MOTION_SCRIPT = `(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('motion');setTimeout(function(){if(!document.querySelector('.is-in'))d.classList.remove('motion')},3000)})()`
 
 export const metadata: Metadata = {
   title: 'Te Wairama Digital',
@@ -48,9 +52,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmMono.variable}`}>
+    <html
+      lang="en"
+      className={`${interTight.variable} ${fragmentMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: MOTION_SCRIPT }} />
+      </head>
       <body>
-        <BodyLayout>{children}</BodyLayout>
+        <GridLines />
+        <Nav />
+        <main>{children}</main>
+        <footer className="site-footer grid rule-top" data-reveal>
+          <p className="site-footer__copy mono muted fade">
+            &copy; Te Wairama Digital 2026
+          </p>
+        </footer>
+        <Motion />
       </body>
     </html>
   )
