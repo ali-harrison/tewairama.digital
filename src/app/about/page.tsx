@@ -1,7 +1,7 @@
 import SplitWords from '@/components/SplitWords'
 
 const PARAGRAPHS = [
-  'Te Wairama Digital is a Christchurch-based creative agency founded by Ali Werahiko Te Wairama. We specialise in high-performance web experiences, the kind that require real code, real craft, and a point of view.',
+  'Te Wairama Digital is a Christchurch-based creative agency founded by Ali Werahiko Te Wairama Harrison. We specialise in high-performance web experiences, the kind that require real code, real craft, and a point of view.',
   "Every project is designed and hand-coded end to end. Layout, motion and build all come from the same hands. Te Ao Māori isn't a visual theme for us. It's a way of working that's relational, considered and built to last.",
   "We exist for clients who want something that can't be templated.",
 ]

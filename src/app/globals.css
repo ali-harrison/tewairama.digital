@@ -550,6 +550,153 @@ a:hover .roll > span + span {
   }
 }
 
+/* ─── Hover preview (home project rows) ──────────────────── */
+
+/* Position comes from ProjectPreview.tsx via `translate`; this centres it above the cursor */
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 45;
+  width: clamp(16rem, 24vw, 24rem);
+  aspect-ratio: 16 / 10;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 1.5rem)) scale(0.92);
+  transition:
+    opacity 0.35s var(--ease),
+    transform 0.6s var(--ease);
+}
+
+.preview.is-on {
+  opacity: 1;
+  transform: translate(-50%, calc(-100% - 1.5rem)) scale(1);
+}
+
+.preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.preview img.is-active {
+  opacity: 1;
+}
+
+/* ─── Case studies (/work) ───────────────────────────────── */
+
+.case {
+  padding-block: 1.5rem 3rem;
+  align-items: baseline;
+  row-gap: 1.25rem;
+}
+
+.case__index {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.case__name {
+  grid-column: 2 / 9;
+  grid-row: 1;
+  font-size: var(--text-h2);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.case__meta {
+  grid-column: 9 / 13;
+  grid-row: 1;
+  text-align: right;
+}
+
+/* Screenshot runs line to line, so no cell inset */
+.case__media {
+  grid-column: 2 / 13;
+  grid-row: 2;
+  display: block;
+  aspect-ratio: 16 / 10;
+  margin-top: 0.5rem;
+  padding-inline: 0;
+  overflow: hidden;
+}
+
+.case__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease);
+}
+
+.case__media:hover img {
+  transform: scale(1.03);
+}
+
+.case__summary {
+  grid-column: 2 / 8;
+  grid-row: 3;
+  max-width: 40rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.case__stack {
+  grid-column: 8 / 11;
+  grid-row: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.case__link {
+  grid-column: 11 / 13;
+  grid-row: 3;
+  justify-self: end;
+  transition: color 0.3s var(--ease);
+}
+
+.case__link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .case__name {
+    grid-column: 2 / -1;
+  }
+
+  .case__meta {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .case__media {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  .case__summary {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+
+  .case__stack {
+    grid-column: 1 / -1;
+    grid-row: 5;
+  }
+
+  .case__link {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    justify-self: start;
+  }
+}
+
 /* ─── About ──────────────────────────────────────────────── */
 
 .about {
@@ -680,6 +827,13 @@ a:hover .roll > span + span {
   }
 }
 
+@keyframes unveil {
+  from {
+    clip-path: inset(0 0 100% 0);
+    scale: 1.08;
+  }
+}
+
 /* First load: grid lines draw down, then the header settles in */
 .motion .grid-lines__inner span {
   animation: draw-y 1.6s var(--ease) both;
@@ -723,6 +877,10 @@ a:hover .roll > span + span {
   opacity: 0;
 }
 
+.motion [data-reveal]:not(.is-in) .case__media img {
+  clip-path: inset(0 0 100% 0);
+}
+
 .motion [data-reveal]:not(.is-in).rule-top::before,
 .motion .rows > [data-reveal]:not(.is-in)::before,
 .motion .rows > [data-reveal]:not(.is-in):last-child::after {
@@ -737,6 +895,12 @@ a:hover .roll > span + span {
 .motion .is-in .fade {
   animation: fade-up 1s var(--ease) both;
   animation-delay: calc(var(--delay, 0s) + var(--stagger, 0) * 90ms + var(--i, 0) * 70ms + 0.15s);
+}
+
+/* Screenshots wipe down from the top while settling from a slight zoom */
+.motion .is-in .case__media img {
+  animation: unveil 1.4s var(--ease) both;
+  animation-delay: calc(var(--delay, 0s) + var(--stagger, 0) * 90ms + 0.25s);
 }
 
 .motion .is-in.rule-top::before,

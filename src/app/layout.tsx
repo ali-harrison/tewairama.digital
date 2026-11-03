@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   description:
     'Creative web developer based in Ōtautahi, Aotearoa. React, Next.js, motion design.',
   metadataBase: new URL('https://tewairama.digital'),
+  authors: [{ name: 'Ali Werahiko Te Wairama Harrison', url: 'https://tewairama.digital' }],
+  creator: 'Ali Werahiko Te Wairama Harrison',
+  // Share image comes from app/opengraph-image.png
   openGraph: {
     title: 'Te Wairama Digital',
     description:

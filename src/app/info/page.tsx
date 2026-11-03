@@ -3,8 +3,9 @@ import { pad } from '@/lib/pad'
 
 const LINKS = [
   { label: 'tewairama@pm.me ↗', href: 'mailto:tewairama@pm.me' },
-  { label: 'instagram.com/tewairama.digital ↗', href: 'https://instagram.com/tewairama.digital/' },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/te-wairama' },
+  { label: 'GitHub ↗', href: 'https://github.com/ali-harrison' },
+  { label: 'instagram.com/tewairama.digital ↗', href: 'https://instagram.com/tewairama.digital/' },
 ]
 
 export default function ContactPage() {
