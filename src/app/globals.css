@@ -15,7 +15,8 @@
   --text-mono: 0.75rem;
   --text-body: 1.0625rem;
   --text-h2: clamp(1.5rem, 2.6vw, 2.5rem);
-  --text-statement: clamp(2rem, 4.4vw, 4.5rem);
+  /* also capped by height so the home page fits short laptop screens */
+  --text-statement: clamp(2rem, min(4.4vw, 7svh), 4.5rem);
   --text-display: clamp(3rem, 10vw, 9rem);
 
   --cols: 12;
@@ -66,8 +67,11 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* column so a page's hero can grow into the space left over (see .hero) */
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -367,6 +371,11 @@ a:hover .roll > span + span {
   grid-column: 1 / -1;
 }
 
+/* The home page fills the viewport exactly, so no gap before the footer */
+body:has(.hero) .site-footer {
+  margin-top: 0;
+}
+
 /* ─── Page head (h1 + meta) ──────────────────────────────── */
 
 .page-head {
@@ -403,8 +412,9 @@ a:hover .roll > span + span {
 
 /* ─── Sections ───────────────────────────────────────────── */
 
+/* spacing above comes from the hero's padding */
 .section {
-  padding-top: 5rem;
+  padding-top: 0;
 }
 
 .section__head {
@@ -423,11 +433,12 @@ a:hover .roll > span + span {
 
 /* ─── Home ───────────────────────────────────────────────── */
 
+/* Grows to fill whatever the header, work list and footer leave, so the home
+   page sits in one screen when it fits and scrolls normally when it doesn't */
 .hero {
-  min-height: 78svh;
+  flex: 1;
   align-content: end;
-  padding-block: 4rem 3rem;
-  row-gap: 2rem;
+  padding-block: 2rem 2.5rem;
 }
 
 .hero__statement {
@@ -438,26 +449,9 @@ a:hover .roll > span + span {
   text-wrap: balance;
 }
 
-.hero__cue {
-  grid-column: 10 / 13;
-  align-self: end;
-  justify-self: end;
-  transition: color 0.3s var(--ease);
-}
-
-.hero__cue:hover {
-  color: var(--fg);
-}
-
 @media (max-width: 900px) {
-  .hero {
-    min-height: 70svh;
-  }
-
-  .hero__statement,
-  .hero__cue {
+  .hero__statement {
     grid-column: 1 / -1;
-    justify-self: start;
   }
 }
 

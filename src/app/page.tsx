@@ -11,16 +11,6 @@ export default function Home() {
     <>
       <section className="hero grid" data-reveal>
         <SplitWords as="h1" text={STATEMENT} className="hero__statement" />
-        <a
-          href="#work"
-          className="hero__cue mono muted fade"
-          style={{ '--i': 8 } as React.CSSProperties}
-        >
-          <span className="roll">
-            <span>Selected work ↓</span>
-            <span aria-hidden="true">Selected work ↓</span>
-          </span>
-        </a>
       </section>
 
       <section id="work" className="section">
