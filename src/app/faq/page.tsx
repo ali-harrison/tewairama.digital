@@ -3,28 +3,32 @@ import { pad } from '@/lib/pad'
 
 const FAQS = [
   {
-    q: "What's your tech stack?",
-    a: 'React, Next.js, TypeScript, GSAP for animation, Three.js and custom GLSL shaders for WebGL work. Deployed on Vercel.',
-  },
-  {
-    q: 'Do you work with no-code platforms?',
-    a: "No. Everything is hand-coded. That's the point. The work we do can't be replicated in Webflow or Framer.",
-  },
-  {
-    q: 'Can I use your code or copy your site?',
-    a: "You're welcome to take inspiration. Taking source code is not okay. It's how you stay average.",
-  },
-  {
-    q: 'How do engagements work?',
-    a: "Discovery first. If there's a fit, we scope the project and agree on a fixed price. No hourly billing, no surprises.",
+    q: 'Are you open to full-time roles?',
+    a: "Yes. I'm looking for a developer role on a product or creative team, and I'm open to contract work too.",
   },
   {
     q: 'Where are you based?',
-    a: 'Ōtautahi Christchurch, Aotearoa New Zealand. We work remotely with clients across NZ and internationally.',
+    a: "Ōtautahi Christchurch, Aotearoa New Zealand. I'm open to remote roles anywhere in NZ and hybrid in Christchurch, and I work with freelance clients across NZ and overseas.",
   },
   {
-    q: 'What makes Te Wairama Digital different?',
-    a: 'Technical depth and cultural grounding. We bring Te Ao Māori values into digital work, not as decoration but as a design philosophy.',
+    q: "What's your tech stack?",
+    a: 'React, Next.js and TypeScript on the front end, Supabase, Node.js and Stripe behind it, and GSAP, Three.js and GLSL shaders for motion and 3D. I deploy on Vercel.',
+  },
+  {
+    q: 'Can I see your code?',
+    a: 'Yes. Most of my work is on GitHub, and each project on the Work page links to its code.',
+  },
+  {
+    q: 'Do you work with no-code platforms?',
+    a: "I hand-code my own projects, because the work I like doing needs it. In a team I'm happy working with whatever tools you use.",
+  },
+  {
+    q: 'How do freelance projects work?',
+    a: "We start with a chat. If it's a fit, I scope the project and we agree on a fixed price, so there are no surprises.",
+  },
+  {
+    q: 'What makes your work different?',
+    a: 'Technical depth and cultural grounding. I bring Te Ao Māori values into digital work, not as decoration but as a design philosophy.',
   },
 ]
 

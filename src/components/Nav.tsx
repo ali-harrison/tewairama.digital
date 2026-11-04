@@ -59,13 +59,27 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              href="/Ali_Harrison_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link mono"
+              aria-label="CV (PDF)"
+            >
+              <span className="roll">
+                <span>CV ↗</span>
+                <span aria-hidden="true">CV ↗</span>
+              </span>
+            </a>
+          </li>
         </ul>
       </nav>
 
       <p className="site-header__status mono muted">
         <span ref={timeRef} /> NZT / Aotearoa /{' '}
         <span className="status-dot" aria-hidden="true" />
-        Commissions open
+        Open to work
       </p>
     </header>
   )

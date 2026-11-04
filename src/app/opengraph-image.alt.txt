@@ -1,1 +1,1 @@
-Te Wairama Digital: a dark grid-lined homepage with the statement "Based in Ōtautahi, Aotearoa. Full-stack web developer specialising in React, Next.js, and motion design."
+Te Wairama Digital: a dark grid-lined homepage with the statement "I'm Ali, a full-stack developer in Ōtautahi, Aotearoa" above a list of four selected projects.

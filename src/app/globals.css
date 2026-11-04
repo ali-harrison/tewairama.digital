@@ -548,7 +548,7 @@ body:has(.hero) .site-footer {
    Sits after the hero and project-row rules so it overrides them. */
 @media (min-width: 901px) and (max-height: 800px) {
   .hero {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
 
   .section__head {
@@ -663,10 +663,16 @@ body:has(.hero) .site-footer {
   gap: 0.25rem 1rem;
 }
 
-.case__link {
-  grid-column: 11 / 13;
+.case__links {
+  grid-column: 10 / 13;
   grid-row: 3;
   justify-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.case__link {
   transition: color 0.3s var(--ease);
 }
 
@@ -700,7 +706,7 @@ body:has(.hero) .site-footer {
     grid-row: 5;
   }
 
-  .case__link {
+  .case__links {
     grid-column: 1 / -1;
     grid-row: 6;
     justify-self: start;

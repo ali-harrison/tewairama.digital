@@ -3,6 +3,7 @@ import { pad } from '@/lib/pad'
 
 const LINKS = [
   { label: 'tewairama@pm.me ↗', href: 'mailto:tewairama@pm.me' },
+  { label: 'CV ↗', href: '/Ali_Harrison_CV.pdf' },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/te-wairama' },
   { label: 'GitHub ↗', href: 'https://github.com/ali-harrison' },
   { label: 'instagram.com/tewairama.digital ↗', href: 'https://instagram.com/tewairama.digital/' },
@@ -21,7 +22,7 @@ export default function ContactPage() {
             <span className="contact-row__index mono muted fade">{pad(i + 1)}</span>
             <a
               href={href}
-              target={href.startsWith('http') ? '_blank' : undefined}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
               rel="noopener noreferrer"
               className="contact-row__link"
             >

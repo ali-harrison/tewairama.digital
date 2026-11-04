@@ -12,7 +12,7 @@ export default function WorkPage() {
       </div>
 
       <ol className="case-list rows">
-        {PROJECTS.map(({ name, role, year, href, summary, stack, image }, i) => (
+        {PROJECTS.map(({ name, role, year, href, repo, summary, stack, image }, i) => (
           <li key={name} className="case grid" data-reveal>
             <span className="case__index mono muted fade">{pad(i + 1)}</span>
             <SplitWords as="h2" text={name} className="case__name" />
@@ -55,18 +55,35 @@ export default function WorkPage() {
                 <li key={tool}>{tool}</li>
               ))}
             </ul>
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="case__link mono fade"
+            <div
+              className="case__links mono fade"
               style={{ '--i': 4 } as React.CSSProperties}
             >
-              <span className="roll">
-                <span>Visit site ↗</span>
-                <span aria-hidden="true">Visit site ↗</span>
-              </span>
-            </a>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="case__link"
+                aria-label={`Visit the ${name} site`}
+              >
+                <span className="roll">
+                  <span>Visit site ↗</span>
+                  <span aria-hidden="true">Visit site ↗</span>
+                </span>
+              </a>
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="case__link"
+                aria-label={`${name} code on GitHub`}
+              >
+                <span className="roll">
+                  <span>Code ↗</span>
+                  <span aria-hidden="true">Code ↗</span>
+                </span>
+              </a>
+            </div>
           </li>
         ))}
       </ol>

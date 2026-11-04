@@ -24,18 +24,20 @@ const fragmentMono = Fragment_Mono({
 // so the page can never get stuck hidden.
 const MOTION_SCRIPT = `(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('motion');setTimeout(function(){if(!document.querySelector('.is-in'))d.classList.remove('motion')},3000)})()`
 
+const TITLE = 'Ali Harrison · Te Wairama Digital'
+const DESCRIPTION =
+  'Full-stack web developer in Ōtautahi, Aotearoa. React, Next.js, motion and 3D. Open to roles and freelance work.'
+
 export const metadata: Metadata = {
-  title: 'Te Wairama Digital',
-  description:
-    'Creative web developer based in Ōtautahi, Aotearoa. React, Next.js, motion design.',
+  title: TITLE,
+  description: DESCRIPTION,
   metadataBase: new URL('https://tewairama.digital'),
   authors: [{ name: 'Ali Werahiko Te Wairama Harrison', url: 'https://tewairama.digital' }],
   creator: 'Ali Werahiko Te Wairama Harrison',
   // Share image comes from app/opengraph-image.png
   openGraph: {
-    title: 'Te Wairama Digital',
-    description:
-      'Creative web developer based in Ōtautahi, Aotearoa. React, Next.js, motion design.',
+    title: TITLE,
+    description: DESCRIPTION,
     url: 'https://tewairama.digital',
     siteName: 'Te Wairama Digital',
     locale: 'en_NZ',
@@ -43,9 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Te Wairama Digital',
-    description:
-      'Creative web developer based in Ōtautahi, Aotearoa. React, Next.js, motion design.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 }
 
