@@ -1,35 +1,24 @@
-# Te Wairama Digital
+# tewairama.digital
 
-Portfolio of Ali Werahiko Te Wairama Harrison, a creative web developer based in Ōtautahi, Aotearoa.
+My portfolio. I'm Ali Werahiko Te Wairama Harrison, a web developer in Ōtautahi, and I work as Te Wairama Digital.
 
-**Live:** https://tewairama.digital
+Live at https://tewairama.digital
 
-## Highlights
+Built with Next.js 14, TypeScript and plain CSS.
 
-- **Grid system:** a 12-column grid (6 on tablet, 4 on phone) with fixed hairline column guides. The column under the cursor glows in kōkōwai, the red ochre accent.
-- **Motion without a library:** headings rise word by word from masks, hairlines draw in, screenshots wipe in, and rows fade up as they scroll into view. It's CSS keyframes plus one small observer component, and it respects `prefers-reduced-motion`.
-- **No hidden content:** reveal start-states only apply once an inline script confirms motion is wanted, and a fallback shows everything if nothing has revealed within three seconds.
-- **Project previews:** the home page's project rows show a screenshot that trails the cursor; the Work page has full case studies.
+## Notes
 
-## Stack
+The layout sits on a 12 column grid (6 on tablets, 4 on phones). The column lines are a fixed overlay that matches the grid exactly, and the column under your cursor picks up a faint red ochre glow.
 
-Next.js 14 (App Router), React, TypeScript, plain CSS, `next/font` (Inter Tight and Fragment Mono). Deployed on Vercel.
+The motion is CSS keyframes plus one small component, `src/components/Motion.tsx`, which adds a class to each block as it scrolls into view. Headings rise in word by word, rules draw across and screenshots wipe in. The hidden start states only switch on once an inline script knows motion is wanted, and if nothing has revealed after three seconds they switch off again, so the page can't get stuck blank. All of it respects reduced motion.
 
-## Structure
+On the home page, hovering a project shows a screenshot that trails the cursor. The home page also fits on one screen when there's room and scrolls normally when there isn't.
 
-| Path | What's there |
-| --- | --- |
-| `src/app/globals.css` | Design tokens, grid, every component style, and the motion section |
-| `src/content/projects.ts` | Project data and screenshots for the home list and Work page |
-| `src/components/Motion.tsx` | Adds `.is-in` to `[data-reveal]` blocks as they enter the viewport |
-| `src/components/SplitWords.tsx` | Splits a heading into masked words (screen readers get the plain text) |
-| `src/components/GridLines.tsx` | The fixed column guides and cursor glow |
-| `src/components/ProjectPreview.tsx` | Cursor-trailing screenshot on the home page |
+Styles are all in `src/app/globals.css` and the project data is in `src/content/projects.ts`.
 
-## Running locally
+## Running it
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000
-npm run build   # production build
+npm run dev
 ```
