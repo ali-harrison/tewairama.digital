@@ -7,10 +7,10 @@ export default function ProjectList() {
   return (
     <>
       <ol className="project-list rows">
-        {PROJECTS.map(({ name, role, year, href }, i) => (
+        {PROJECTS.map(({ name, role, year, href, repo }, i) => (
           <li key={name} data-reveal>
             <a
-              href={href}
+              href={href ?? repo}
               target="_blank"
               rel="noopener noreferrer"
               className="project-row grid"

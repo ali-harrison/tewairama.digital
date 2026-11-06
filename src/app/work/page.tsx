@@ -23,9 +23,9 @@ export default function WorkPage() {
               {role} &middot; {year}
             </p>
 
-            {/* Same destination as "Visit site", so kept out of the tab order */}
+            {/* Same destination as the links below, so kept out of the tab order */}
             <a
-              href={href}
+              href={href ?? repo}
               target="_blank"
               rel="noopener noreferrer"
               className="case__media"
@@ -59,18 +59,20 @@ export default function WorkPage() {
               className="case__links mono fade"
               style={{ '--i': 4 } as React.CSSProperties}
             >
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="case__link"
-                aria-label={`Visit the ${name} site`}
-              >
-                <span className="roll">
-                  <span>Visit site ↗</span>
-                  <span aria-hidden="true">Visit site ↗</span>
-                </span>
-              </a>
+              {href && (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="case__link"
+                  aria-label={`Visit the ${name} site`}
+                >
+                  <span className="roll">
+                    <span>Visit site ↗</span>
+                    <span aria-hidden="true">Visit site ↗</span>
+                  </span>
+                </a>
+              )}
               <a
                 href={repo}
                 target="_blank"

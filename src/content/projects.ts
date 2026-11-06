@@ -1,5 +1,7 @@
 import type { StaticImageData } from 'next/image'
 import hinewaaImage from './work/hinewaa.jpg'
+import koriImage from './work/kori.png'
+import awaImage from './work/awa.png'
 import crookImage from './work/crook.jpg'
 import ramaImage from './work/rama.jpg'
 import sixVoicesImage from './work/6v1d.jpg'
@@ -8,11 +10,11 @@ export type Project = {
   name: string
   role: string
   year: string
-  href: string
+  href?: string // live site; projects without a public one link to the repo
   repo: string
   summary: string
   stack: string[]
-  image: StaticImageData // homepage screenshot, 1440×900 at 1.5x
+  image: StaticImageData // shown at 16:10
 }
 
 export const PROJECTS: Project[] = [
@@ -26,6 +28,27 @@ export const PROJECTS: Project[] = [
       'Website for a Māori-owned strategy and governance practice working across climate, taiao and Indigenous economies. Bilingual navigation, tukutuku-inspired imagery, scroll-driven motion and a contact form backed by a serverless email function.',
     stack: ['React', 'TypeScript', 'Vite', 'GSAP', 'Resend'],
     image: hinewaaImage,
+  },
+  {
+    name: 'kori/os',
+    role: 'Design & Dev (Product demo)',
+    year: '2026',
+    href: 'https://kori-demo.vercel.app',
+    repo: 'https://github.com/ali-harrison/KORI',
+    summary:
+      "Gym management app for New Zealand gyms: members, plans, direct debit, contracts and overdue reminders on one ledger. Billing runs on signed GoCardless webhooks, and the public demo replays each visitor's changes from a cookie, so it needs no database.",
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'GoCardless', 'Vitest'],
+    image: koriImage,
+  },
+  {
+    name: 'AWA/OS',
+    role: 'Design & Dev (Studio tool)',
+    year: '2026',
+    repo: 'https://github.com/ali-harrison/Awa-OS',
+    summary:
+      'Studio app that runs a project from first enquiry to final invoice, with the whole pipeline drawn as a river and a separate portal for clients. Two auth models, Stripe payment links, server-rendered PDF invoices and row-level security in Postgres.',
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Resend'],
+    image: awaImage,
   },
   {
     name: 'Crook',

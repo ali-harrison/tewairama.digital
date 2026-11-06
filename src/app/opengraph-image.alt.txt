@@ -1,1 +1,1 @@
-Te Wairama Digital: a dark grid-lined homepage with the statement "I'm Ali, a full-stack developer in Ōtautahi, Aotearoa" above a list of four selected projects.
+Te Wairama Digital: a dark grid-lined homepage with the statement "I'm Ali, a full-stack developer in Ōtautahi, Aotearoa" above a two-column list of six selected projects.
