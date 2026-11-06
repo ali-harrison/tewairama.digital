@@ -12,7 +12,7 @@ export default function WorkPage() {
       </div>
 
       <ol className="case-list rows">
-        {PROJECTS.map(({ name, role, year, href, repo, summary, stack, image }, i) => (
+        {PROJECTS.map(({ name, role, date, href, repo, summary, stack, image }, i) => (
           <li key={name} className="case grid" data-reveal>
             <span className="case__index mono muted fade">{pad(i + 1)}</span>
             <SplitWords as="h2" text={name} className="case__name" />
@@ -20,7 +20,7 @@ export default function WorkPage() {
               className="case__meta mono muted fade"
               style={{ '--i': 1 } as React.CSSProperties}
             >
-              {role} &middot; {year}
+              {role} &middot; {date}
             </p>
 
             {/* Same destination as the links below, so kept out of the tab order */}

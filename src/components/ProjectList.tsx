@@ -7,7 +7,7 @@ export default function ProjectList() {
   return (
     <>
       <ol className="project-list rows">
-        {PROJECTS.map(({ name, role, year, href, repo }, i) => (
+        {PROJECTS.map(({ name, role, date, href, repo }, i) => (
           <li key={name} data-reveal>
             <a
               href={href ?? repo}
@@ -25,10 +25,10 @@ export default function ProjectList() {
                 {role}
               </span>
               <span
-                className="project-row__year mono muted fade"
+                className="project-row__date mono muted fade"
                 style={{ '--i': 2 } as React.CSSProperties}
               >
-                {year}
+                {date}
               </span>
               <span
                 className="project-row__arrow fade"

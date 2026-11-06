@@ -9,7 +9,7 @@ import sixVoicesImage from './work/6v1d.jpg'
 export type Project = {
   name: string
   role: string
-  year: string
+  date: string // short month and year, e.g. Jun 2025
   href?: string // live site; projects without a public one link to the repo
   repo: string
   summary: string
@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Hinewaa Ltd',
     role: 'Design & Dev',
-    year: '2025',
+    date: 'Jun 2025',
     href: 'https://hinewaa.com',
     repo: 'https://github.com/ali-harrison/hinewaa-website',
     summary:
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'kori/os',
     role: 'Design & Dev (Product demo)',
-    year: '2026',
+    date: 'Jan 2026',
     href: 'https://kori-demo.vercel.app',
     repo: 'https://github.com/ali-harrison/KORI',
     summary:
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'AWA/OS',
     role: 'Design & Dev (Studio tool)',
-    year: '2026',
+    date: 'May 2026',
     repo: 'https://github.com/ali-harrison/Awa-OS',
     summary:
       'Studio app that runs a project from first enquiry to final invoice, with the whole pipeline drawn as a river and a separate portal for clients. Two auth models, Stripe payment links, server-rendered PDF invoices and row-level security in Postgres.',
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Crook',
     role: 'Design & Dev (Concept)',
-    year: '2026',
+    date: 'Nov 2026',
     href: 'https://crook-vinyl.vercel.app',
     repo: 'https://github.com/ali-harrison/crook-vinyl',
     summary:
@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'RAMA',
     role: 'Design & Dev (Concept)',
-    year: '2026',
+    date: 'Jul 2026',
     href: 'https://rama-nu.vercel.app',
     repo: 'https://github.com/ali-harrison/rama',
     summary:
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Six Voices. One Direction',
     role: 'Design & Dev (Concept)',
-    year: '2026',
+    date: 'Jul 2026',
     href: 'https://6v1d.vercel.app/',
     repo: 'https://github.com/ali-harrison/6v1d',
     summary:
