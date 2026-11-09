@@ -26,7 +26,7 @@ const MOTION_SCRIPT = `(function(){var d=document.documentElement;if(matchMedia(
 
 const TITLE = 'Ali Harrison · Te Wairama Digital'
 const DESCRIPTION =
-  'Full-stack web developer in Ōtautahi, Aotearoa. React, Next.js, motion and 3D. Open to roles and freelance work.'
+  'Web designer in Ōtautahi, Aotearoa. I design sites around motion, type and 3D, and build every one myself.'
 
 export const metadata: Metadata = {
   title: TITLE,

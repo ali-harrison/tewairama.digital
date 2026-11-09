@@ -4,7 +4,7 @@ import { PROJECTS } from '@/content/projects'
 import { pad } from '@/lib/pad'
 
 const STATEMENT =
-  "I'm Ali, a full-stack developer in Ōtautahi, Aotearoa. I build with React, Next.js and Three.js, led by motion and grounded in Te Ao Māori values. Open to roles and freelance work."
+  "I'm Ali, a web designer in Ōtautahi, Aotearoa. I design sites around motion and type, then build them myself in React and Three.js, grounded in Te Ao Māori values."
 
 export default function Home() {
   return (

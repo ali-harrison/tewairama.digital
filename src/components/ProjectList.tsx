@@ -7,12 +7,12 @@ export default function ProjectList() {
   return (
     <>
       <ol className="project-list rows">
-        {PROJECTS.map(({ name, role, date, href, repo }, i) => (
+        {PROJECTS.map(({ name, role, href, repo, caseStudy }, i) => (
           <li key={name} data-reveal>
             <a
-              href={href ?? repo}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={caseStudy ? `/work/${caseStudy.slug}` : href ?? repo}
+              target={caseStudy ? undefined : '_blank'}
+              rel={caseStudy ? undefined : 'noopener noreferrer'}
               className="project-row grid"
               data-preview={i}
             >
@@ -25,17 +25,11 @@ export default function ProjectList() {
                 {role}
               </span>
               <span
-                className="project-row__date mono muted fade"
-                style={{ '--i': 2 } as React.CSSProperties}
-              >
-                {date}
-              </span>
-              <span
                 className="project-row__arrow fade"
-                style={{ '--i': 3 } as React.CSSProperties}
+                style={{ '--i': 2 } as React.CSSProperties}
                 aria-hidden="true"
               >
-                ↗
+                {caseStudy ? '→' : '↗'}
               </span>
             </a>
           </li>
