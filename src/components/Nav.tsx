@@ -40,7 +40,7 @@ export default function Nav() {
         Te Wairama Digital
       </Link>
       <p className="site-header__role mono muted">
-        Creative Web Developer / Aotearoa
+        Web Designer / Aotearoa
       </p>
 
       <nav aria-label="Main" className="site-header__nav">
@@ -50,7 +50,11 @@ export default function Nav() {
               <Link
                 href={href}
                 className="nav-link mono"
-                aria-current={pathname === href ? 'page' : undefined}
+                aria-current={
+                  pathname === href || (href !== '/' && pathname.startsWith(`${href}/`))
+                    ? 'page'
+                    : undefined
+                }
               >
                 <span className="roll">
                   <span>{label}</span>

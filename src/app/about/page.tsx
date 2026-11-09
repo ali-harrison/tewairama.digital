@@ -1,17 +1,17 @@
 import SplitWords from '@/components/SplitWords'
 
 const PARAGRAPHS = [
-  "I'm Ali Werahiko Te Wairama Harrison, a full-stack web developer in Ōtautahi. I trained at Dev Academy Aotearoa in 2024 and have run Te Wairama Digital since 2025, designing and building sites and platforms that need real code, real craft and a point of view.",
+  "I'm Ali Werahiko Te Wairama Harrison, a web designer in Ōtautahi. I trained as a developer at Dev Academy Aotearoa in 2024 and have run Te Wairama Digital since 2025, so the sites I design are ones I already know how to build.",
   "I design and hand-code every project end to end, from layout to motion to build. Te Ao Māori isn't a visual theme for me. It's a way of working that's relational, considered and built to last.",
-  "I'm looking for a developer role on a product or creative team, and I still take on freelance projects.",
+  "I'm looking for a design role on a product or creative team, somewhere knowing the code makes the design better. I still take on freelance projects.",
 ]
 
 const STATS = [
   'Ōtautahi, Aotearoa',
   'Te Wairama Digital, since 2025',
   'Dev Academy Aotearoa, 2024',
-  'React · Next.js · Three.js · Supabase',
-  'Open to work',
+  'Design · Motion · Front-end',
+  'React · Next.js · Three.js',
 ]
 
 export default function AboutPage() {

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import SplitWords from '@/components/SplitWords'
 import { PROJECTS } from '@/content/projects'
 import { pad } from '@/lib/pad'
@@ -12,7 +13,7 @@ export default function WorkPage() {
       </div>
 
       <ol className="case-list rows">
-        {PROJECTS.map(({ name, role, date, href, repo, summary, stack, image }, i) => (
+        {PROJECTS.map(({ name, role, date, href, repo, summary, stack, image, caseStudy }, i) => (
           <li key={name} className="case grid" data-reveal>
             <span className="case__index mono muted fade">{pad(i + 1)}</span>
             <SplitWords as="h2" text={name} className="case__name" />
@@ -25,8 +26,8 @@ export default function WorkPage() {
 
             {/* Same destination as the links below, so kept out of the tab order */}
             <a
-              href={href ?? repo}
-              target="_blank"
+              href={caseStudy ? `/work/${caseStudy.slug}` : href ?? repo}
+              target={caseStudy ? undefined : '_blank'}
               rel="noopener noreferrer"
               className="case__media"
               tabIndex={-1}
@@ -59,6 +60,18 @@ export default function WorkPage() {
               className="case__links mono fade"
               style={{ '--i': 4 } as React.CSSProperties}
             >
+              {caseStudy && (
+                <Link
+                  href={`/work/${caseStudy.slug}`}
+                  className="case__link"
+                  aria-label={`Read the ${name} case study`}
+                >
+                  <span className="roll">
+                    <span>Case study →</span>
+                    <span aria-hidden="true">Case study →</span>
+                  </span>
+                </Link>
+              )}
               {href && (
                 <a
                   href={href}

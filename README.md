@@ -1,10 +1,10 @@
 # tewairama.digital
 
-My portfolio. I'm Ali Werahiko Te Wairama Harrison, a web developer in Ōtautahi, and I work as Te Wairama Digital.
+My portfolio. I'm Ali Werahiko Te Wairama Harrison, a web designer in Ōtautahi, and I work as Te Wairama Digital.
 
 Live at https://tewairama.digital
 
-Built with Next.js 14, TypeScript and plain CSS.
+Built with Next.js 14, TypeScript and plain CSS, with no animation or 3D libraries.
 
 ## Notes
 

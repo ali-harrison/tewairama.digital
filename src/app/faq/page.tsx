@@ -4,15 +4,15 @@ import { pad } from '@/lib/pad'
 const FAQS = [
   {
     q: 'Are you open to full-time roles?',
-    a: "Yes. I'm looking for a developer role on a product or creative team, and I'm open to contract work too.",
+    a: "Yes. I'm looking for a web or digital design role on a product or creative team, and I'm open to contract work too.",
   },
   {
     q: 'Where are you based?',
     a: "Ōtautahi Christchurch, Aotearoa New Zealand. I'm open to remote roles anywhere in NZ and hybrid in Christchurch, and I work with freelance clients across NZ and overseas.",
   },
   {
-    q: "What's your tech stack?",
-    a: 'React, Next.js and TypeScript on the front end, Supabase, Node.js and Stripe behind it, and GSAP, Three.js and GLSL shaders for motion and 3D. I deploy on Vercel.',
+    q: 'Do you build what you design?',
+    a: 'Yes, every project. I build in React, Next.js and TypeScript, with GSAP, Three.js and GLSL shaders for motion and 3D, and Supabase and Stripe when a project needs a backend. I deploy on Vercel.',
   },
   {
     q: 'Can I see your code?',
@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: 'What makes your work different?',
-    a: 'Technical depth and cultural grounding. I bring Te Ao Māori values into digital work, not as decoration but as a design philosophy.',
+    a: "I design with the build in mind, so what you see in the design is what ships. And I bring Te Ao Māori values into the work, not as decoration but as a way of deciding what matters.",
   },
 ]
 
